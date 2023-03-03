@@ -6,7 +6,7 @@ class Welcome extends Component {
   state = {buttonState: true}
 
   changeState = () => {
-    this.setState(prevState => ({buttonState: !prevState}))
+    this.setState(prevState => ({buttonState: !prevState.buttonState}))
   }
 
   render() {
