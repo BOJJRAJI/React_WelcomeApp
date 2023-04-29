@@ -1,24 +1,23 @@
-// Write your code here
 import {Component} from 'react'
 import './index.css'
 
 class Welcome extends Component {
-  state = {buttonState: true}
+  state = {isSubscribe: false}
 
-  changeState = () => {
-    this.setState(prevState => ({buttonState: !prevState.buttonState}))
+  subscribe = () => {
+    this.setState(prevState => ({
+      isSubscribe: !prevState.isSubscribe,
+    }))
   }
 
   render() {
-    const {buttonState} = this.state
-    const text = buttonState ? 'Subscribe' : 'Subscribed'
-    console.log({buttonState})
+    const {isSubscribe} = this.state
     return (
       <div className="bg-container">
         <h1 className="heading">Welcome</h1>
-        <p className="paragraph">Thank you! Happy Learning</p>
-        <button className="button" type="button" onClick={this.changeState}>
-          {text}
+        <p className="para">Thank you!Happy Learning</p>
+        <button type="button" className="button" onClick={this.subscribe}>
+          {isSubscribe ? 'Subscribed' : 'Subscribe'}
         </button>
       </div>
     )
@@ -26,3 +25,4 @@ class Welcome extends Component {
 }
 
 export default Welcome
+
